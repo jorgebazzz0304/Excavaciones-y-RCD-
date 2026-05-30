@@ -6,9 +6,11 @@
 /* === VARIABLES === */
 :root {
   --gold:    #D4A015;
+  --gold-text: #8A6A0F;
   --orange:  #E8890C;
   --green:   #5B9E3A;
   --gray-bg: #E8E8E8;
+  --gray-dark: #4a4a4a;
   --dark:    #222222;
   --white:   #ffffff;
   --nav-h:   70px;
@@ -76,6 +78,13 @@ img { display: block; max-width: 100%; }
   color: var(--gold);
 }
 
+.nav__link:focus-visible {
+  color: var(--gold);
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
 /* Logo en nav */
 .nav__logo-link {
   display: flex;
@@ -130,7 +139,7 @@ section {
 /* Hero */
 .hero {
   position: relative;
-  background: var(--gray-bg);
+  background: var(--gray-dark);
   min-height: 360px;
   display: flex;
   align-items: center;
@@ -183,7 +192,7 @@ section {
 .intro__text {
   font-size: clamp(0.95rem, 1.6vw, 1.1rem);
   font-weight: 700;
-  color: var(--gold);
+  color: var(--gold-text);
   line-height: 1.7;
   margin-bottom: 2rem;
   text-align: justify;
@@ -217,7 +226,7 @@ section {
 /* Servicios hero banner */
 .servicios-hero {
   position: relative;
-  background: var(--gray-bg);
+  background: var(--gray-dark);
   min-height: 190px;
   display: flex;
   align-items: center;
@@ -360,6 +369,11 @@ section {
   transform: translateY(-50%) scale(0.92);
 }
 
+.carousel-arrow:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
 .carousel-arrow svg {
   width: 18px;
   height: 18px;
@@ -459,10 +473,20 @@ section {
 
 .contact-card__value a {
   color: var(--dark);
-  transition: color 0.2s;
+  text-decoration: underline;
+  text-decoration-color: rgba(0,0,0,0.2);
+  text-underline-offset: 3px;
+  transition: color 0.2s, text-decoration-color 0.2s;
 }
 
-.contact-card__value a:hover { color: var(--gold); }
+.contact-card__value a:hover { color: var(--gold); text-decoration-color: var(--gold); }
+
+.contact-card__value a:focus-visible {
+  color: var(--gold);
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
 
 /* Map wrapper */
 .map-wrapper {
@@ -574,4 +598,73 @@ footer {
   .reveal {
     transition-duration: 0.15s;
   }
+}
+
+/* ============================================
+   BOTÓN FLOTANTE DE WHATSAPP
+   ============================================ */
+.wa-float {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  z-index: 1200;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.25rem 0.85rem 0.95rem;
+  background: #25D366;
+  color: var(--white);
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.22);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  animation: wa-pulse 2.6s ease-in-out infinite;
+}
+
+.wa-float:hover,
+.wa-float:focus-visible {
+  background: #1ebe5a;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.28);
+}
+
+.wa-float:focus-visible {
+  outline: 2px solid var(--white);
+  outline-offset: 3px;
+}
+
+.wa-float__icon {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+}
+
+.wa-float__text {
+  white-space: nowrap;
+}
+
+/* Pulso suave para llamar la atención */
+@keyframes wa-pulse {
+  0%, 100% { box-shadow: 0 6px 20px rgba(0,0,0,0.22), 0 0 0 0 rgba(37,211,102,0.45); }
+  50%      { box-shadow: 0 6px 20px rgba(0,0,0,0.22), 0 0 0 12px rgba(37,211,102,0); }
+}
+
+/* En móvil: solo el icono circular, sin texto */
+@media (max-width: 600px) {
+  .wa-float {
+    right: 1rem;
+    bottom: 1rem;
+    padding: 0;
+    width: 56px;
+    height: 56px;
+    justify-content: center;
+  }
+  .wa-float__text { display: none; }
+}
+
+/* Reduced motion — WhatsApp pulse */
+@media (prefers-reduced-motion: reduce) {
+  .wa-float { animation: none; }
 }
