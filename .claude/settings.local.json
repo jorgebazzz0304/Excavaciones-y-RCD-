@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(if \\(-not \\(Test-Path \"C:\\\\Users\\\\USER\\\\Desktop\\\\PAGINAWEBLM\"\\)\\) { New-Item -ItemType Directory -Path \"C:\\\\Users\\\\USER\\\\Desktop\\\\PAGINAWEBLM\" -Force }; Get-ChildItem \"C:\\\\Users\\\\USER\\\\Desktop\\\\PAGINAWEBLM\")",
+      "Bash(python3 -m http.server 8765)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(\"/c/Program Files/MySQL/MySQL Shell 8.0/lib/Python3.13/Lib/venv/scripts/nt/python.exe\" --version)",
+      "Bash(ls /c/Users/USER/Desktop/*.png /c/Users/USER/Desktop/*.jpg /c/Users/USER/Desktop/*.webp /c/Users/USER/Downloads/*.png /c/Users/USER/Downloads/*.jpg 2>/dev/null | head -20)",
+      "PowerShell(Rename-Item -Path \"C:\\\\Users\\\\USER\\\\Desktop\\\\PAGINAWEBLM\\\\EC6B4C98-9592-40E5-852E-815F9F3B24E5 \\(1\\).png\" -NewName \"logo.png\")",
+      "PowerShell($f=\"C:\\\\Users\\\\USER\\\\Desktop\\\\PAGINAWEBLM\\\\imagenes\\\\SuministroAridos2.jpeg\"; $b=[System.IO.File]::ReadAllBytes\\($f\\)[0..7]; \\($b | ForEach-Object {$_.ToString\\('X2'\\)}\\) -join ' ')"
+    ]
+  }
+}

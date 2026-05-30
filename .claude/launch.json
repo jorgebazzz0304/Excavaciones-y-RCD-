@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "web-excavaciones",
+      "runtimeExecutable": "C:\\Program Files\\MySQL\\MySQL Shell 8.0\\lib\\Python3.13\\Lib\\venv\\scripts\\nt\\python.exe",
+      "runtimeArgs": ["-m", "http.server", "8765", "--directory", "C:\\Users\\USER\\Desktop\\PAGINAWEBLM"],
+      "port": 8765
+    }
+  ]
+}

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Excavaciones y RCD Luis González SL - Empresa familiar de Miajadas especializada en excavaciones, gestión de residuos de construcción y demolición (RCD) y transporte. Desde 1957." />
+  <title>Excavaciones y RCD Luis González SL — Miajadas</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="apple-touch-icon" href="logo.png" />
+
+  <!-- Fuente Inter (Google Fonts) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" />
+
+  <!-- Estilos propios -->
+  <link rel="stylesheet" href="styles.css?v=20260530" />
+</head>
+<body>
+
+  <!-- ===================================================
+       NAVEGACIÓN FIJA
+       =================================================== -->
+  <nav class="nav" role="navigation" aria-label="Menú principal">
+    <!-- Logo -->
+    <a href="#inicio" class="nav__logo-link" aria-label="Ir al inicio">
+      <img src="logo.png" alt="Logo Excavaciones y RCD Luis González SL" class="nav__logo" />
+    </a>
+
+    <!-- Botón hamburguesa (móvil) -->
+    <button class="nav__toggle" aria-label="Abrir menú" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <ul class="nav__list" role="list">
+      <li class="nav__item">
+        <a href="#inicio" class="nav__link is-active" data-target="inicio">INICIO</a>
+      </li>
+      <li class="nav__item">
+        <a href="#servicios" class="nav__link" data-target="servicios">SERVICIOS</a>
+      </li>
+      <li class="nav__item">
+        <a href="#contacto" class="nav__link" data-target="contacto">CONTACTO</a>
+      </li>
+    </ul>
+  </nav>
+
+
+  <!-- ===================================================
+       SECCIÓN 1 — INICIO
+       =================================================== -->
+  <section id="inicio" aria-label="Inicio">
+
+    <!-- Hero -->
+    <div class="hero">
+      <div class="hero__content">
+        <h1 class="hero__title">
+          Excavaciones y RCD<br />
+          Luis González SL<br />
+          Miajadas
+        </h1>
+      </div>
+      <span class="hero__badge" title="Próximamente: vídeo corporativo">VÍDEO</span>
+    </div>
+
+    <!-- Descripción -->
+    <div class="intro">
+      <hr class="intro__divider" aria-hidden="true" />
+      <p class="intro__text reveal">
+        Desde 1957, somos una empresa familiar de Miajadas, especializada en excavaciones y gestión de
+        residuos de construcción y demolición (RCD). Con casi 70 años de experiencia, trabajamos con
+        compromiso, cercanía y profesionalidad, ofreciendo soluciones eficaces y adaptadas a cada
+        proyecto, siempre con respeto por el entorno.
+      </p>
+      <hr class="intro__divider" aria-hidden="true" />
+    </div>
+
+  </section>
+
+
+  <!-- ===================================================
+       SECCIÓN 2 — SERVICIOS
+       =================================================== -->
+  <section id="servicios" aria-label="Servicios">
+
+    <!-- Banner superior con foto -->
+    <div class="servicios-hero">
+      <h2 class="servicios-hero__title">SERVICIOS</h2>
+      <span class="servicios-hero__badge" title="Próximamente: fotografía">FOTO</span>
+    </div>
+
+
+    <!-- ---- Sub-sección: RCD ---- -->
+    <div class="cat-banner cat-banner--orange" role="heading" aria-level="3">
+      RESIDUOS DE CONSTRUCCIÓN Y DEMOLICIÓN (RCD)
+    </div>
+
+    <div class="photo-grid" aria-label="Servicios de gestión de residuos">
+
+      <article class="photo-card reveal" data-carousel>
+        <img src="imagenes/AlquilerContenedores1.jpeg" alt="Alquiler de contenedores 1" class="photo-card__img is-active" />
+        <img src="imagenes/AlquilerContenedores2.jpeg" alt="Alquiler de contenedores 2" class="photo-card__img" />
+        <img src="imagenes/AlquilerContenedores3.jpeg" alt="Alquiler de contenedores 3" class="photo-card__img" />
+        <div class="photo-card__label">Alquiler de Contenedores</div>
+      </article>
+
+      <article class="photo-card reveal" data-carousel>
+        <img src="imagenes/GestionResiduos1.jpeg" alt="Gestión de residuos de construcción 1" class="photo-card__img is-active" />
+        <img src="imagenes/GestionResiduos2.jpeg" alt="Gestión de residuos de construcción 2" class="photo-card__img" />
+        <img src="imagenes/GestionResiduos3.jpeg" alt="Gestión de residuos de construcción 3" class="photo-card__img" />
+        <div class="photo-card__label">Gestión de Residuos</div>
+      </article>
+
+      <article class="photo-card reveal" data-carousel>
+        <img src="imagenes/SuministroAridos1.jpeg" alt="Suministro de áridos 1" class="photo-card__img is-active" />
+        <img src="imagenes/SuministroAridos2.jpeg" alt="Suministro de áridos 2" class="photo-card__img" />
+        <img src="imagenes/SuministroAridos3.jpeg" alt="Suministro de áridos 3" class="photo-card__img" />
+        <div class="photo-card__label">Suministro de Áridos</div>
+      </article>
+
+    </div>
+
+
+    <!-- ---- Sub-sección: Excavaciones y Transporte ---- -->
+    <div class="cat-banner cat-banner--orange" role="heading" aria-level="3">
+      EXCAVACIONES Y TRANSPORTE
+    </div>
+
+    <div class="photo-grid" aria-label="Servicios de excavaciones y transporte">
+
+      <article class="photo-card reveal" data-carousel>
+        <img src="imagenes/BalsaRiego1.jpeg" alt="Balsa de riego 1" class="photo-card__img is-active" />
+        <img src="imagenes/BalsaRiego2.jpeg" alt="Balsa de riego 2" class="photo-card__img" />
+        <img src="imagenes/BalsaRiego3.jpeg" alt="Balsa de riego 3" class="photo-card__img" />
+        <img src="imagenes/BalsaRiego4.jpeg" alt="Balsa de riego 4" class="photo-card__img" />
+        <div class="photo-card__label">Balsa de Riego</div>
+      </article>
+
+      <article class="photo-card reveal">
+        <img src="imagenes/ZanjasRiego.jpeg" alt="Excavación de zanjas de riego" class="photo-card__img" />
+        <div class="photo-card__label">Zanjas de Riego</div>
+      </article>
+
+      <article class="photo-card reveal" data-carousel>
+        <img src="imagenes/Cimentaciones1.jpeg" alt="Cimentaciones con maquinaria 1" class="photo-card__img is-active" />
+        <img src="imagenes/Cimentaciones2.jpeg" alt="Cimentaciones con maquinaria 2" class="photo-card__img" />
+        <div class="photo-card__label">Cimentaciones</div>
+      </article>
+
+      <article class="photo-card reveal">
+        <img src="imagenes/DerribosYDemoliciones.jpeg" alt="Derribos y demoliciones con maquinaria" class="photo-card__img" />
+        <div class="photo-card__label">Derribos y Demoliciones</div>
+      </article>
+
+      <article class="photo-card reveal">
+        <img src="imagenes/MovimientoTierra.jpg" alt="Movimientos de tierra con maquinaria" class="photo-card__img is-active" />
+        <div class="photo-card__label">Movimientos de Tierra</div>
+      </article>
+
+      <article class="photo-card reveal" data-carousel>
+        <img src="imagenes/TransporteMaquinaria1.jpg"  alt="Transporte de maquinaria pesada 1" class="photo-card__img is-active" />
+        <img src="imagenes/TransporteMaquinaria2.jpeg" alt="Transporte de maquinaria pesada 2" class="photo-card__img" />
+        <img src="imagenes/TransporteMaquinaria3.jpeg" alt="Transporte de maquinaria pesada 3" class="photo-card__img" />
+        <div class="photo-card__label">Transportes de Maquinaria</div>
+      </article>
+
+      <article class="photo-card reveal" data-carousel>
+        <img src="imagenes/ObrasPublicas1.jpg" alt="Obras públicas maquinaria 1" class="photo-card__img is-active" />
+        <img src="imagenes/ObrasPublicas2.jpg" alt="Obras públicas maquinaria 2" class="photo-card__img" />
+        <div class="photo-card__label">Obras Públicas</div>
+      </article>
+
+      <article class="photo-card reveal" data-carousel>
+        <img src="imagenes/ArregloCaminos1.jpg" alt="Arreglo de caminos con maquinaria" class="photo-card__img is-active" />
+        <img src="imagenes/ArregloCaminos2.jpg" alt="Camino rural arreglado con niveladora CAT" class="photo-card__img" />
+        <div class="photo-card__label">Arreglos de Caminos</div>
+      </article>
+
+      <article class="photo-card reveal">
+        <img src="imagenes/AlquilerPlataformaElevadora.jpg" alt="Alquiler de plataforma elevadora tijera en obra" class="photo-card__img" />
+        <div class="photo-card__label">Alquiler de Plataforma Elevadora</div>
+      </article>
+
+    </div>
+
+
+    <!-- Banner autorización Junta de Extremadura -->
+    <div class="auth-banner-wrap">
+      <div class="cat-banner cat-banner--green">
+        EMPRESA AUTORIZADA POR LA JUNTA DE EXTREMADURA PARA LA GESTIÓN DE RESIDUOS DE LA CONSTRUCCIÓN Y DEMOLICIÓN
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- ===================================================
+       SECCIÓN 3 — CONTACTO
+       =================================================== -->
+  <section id="contacto" aria-label="Contacto">
+
+    <hr class="contacto__divider" aria-hidden="true" />
+
+    <p class="contacto__intro reveal">
+      En <strong>Excavaciones Luis González</strong>, estamos a su disposición para atender
+      cualquier consulta y ofrecerle toda la información que necesite sobre nuestros servicios.
+      No dude en ponerse en contacto con nosotros; estaremos encantados de ayudarle.
+    </p>
+
+    <hr class="contacto__divider-bottom" aria-hidden="true" />
+
+    <!-- Tarjetas de contacto -->
+    <div class="contact-cards reveal">
+
+      <!-- Correo -->
+      <div class="contact-card">
+        <svg class="contact-card__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/>
+        </svg>
+        <span class="contact-card__label">Correo</span>
+        <p class="contact-card__value">
+          <a href="mailto:Luisgonzalez.demiajadas@gmail.com">Luisgonzalez.demiajadas@gmail.com</a>
+        </p>
+      </div>
+
+      <!-- Teléfono -->
+      <div class="contact-card">
+        <svg class="contact-card__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.01l-2.2 2.21z"/>
+        </svg>
+        <span class="contact-card__label">Teléfonos</span>
+        <p class="contact-card__value">
+          <a href="tel:927347033">927347033</a><br />
+          <a href="tel:648411435">648411435</a>
+        </p>
+      </div>
+
+      <!-- Dirección -->
+      <div class="contact-card">
+        <svg class="contact-card__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/>
+        </svg>
+        <span class="contact-card__label">Dirección</span>
+        <p class="contact-card__value">Miajadas y Escurial</p>
+      </div>
+
+    </div>
+
+    <!-- Mapa Google Maps -->
+    <div class="map-wrapper">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3093.6327799369924!2d-5.895833023457508!3d39.160333171669016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd145300483bc52b%3A0x5b1b83a0e611f983!2sRCD%20LUIS%20GONZ%C3%81LEZ!5e0!3m2!1ses!2ses!4v1780165135172!5m2!1ses!2ses"
+        width="100%"
+        height="380"
+        style="border:0; display:block;"
+        allowfullscreen=""
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Ubicación de RCD Luis González en Miajadas"
+      ></iframe>
+    </div>
+
+  </section>
+
+
+  <!-- ===================================================
+       FOOTER
+       =================================================== -->
+  <footer>
+    <p>&copy; 2025 Excavaciones y RCD Luis González SL — Miajadas. Todos los derechos reservados.</p>
+  </footer>
+
+
+  <!-- Scripts propios — IIFE, sin módulos ES -->
+  <script defer src="main.js?v=20260530"></script>
+
+</body>
+</html>
