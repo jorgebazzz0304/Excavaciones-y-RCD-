@@ -64,9 +64,10 @@ img { display: block; max-width: 100%; }
 }
 
 .nav__link {
-  font-size: 0.9rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  font-family: var(--font);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--dark);
   transition: color 0.25s;
@@ -140,37 +141,70 @@ section {
 .hero {
   position: relative;
   background: var(--gray-dark);
-  min-height: 360px;
+  min-height: 480px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   padding: 3rem 2rem;
+  overflow: hidden;
 }
 
-.hero__content { pointer-events: none; }
+/* Vídeo de fondo */
+.hero__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  /* Zoom para recortar las franjas (letterbox) horneadas en el archivo */
+  transform: scale(1.18);
+  transform-origin: center;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Capa oscura encima del vídeo para mejorar contraste */
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.45));
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  pointer-events: none;
+}
 
 .hero__title {
-  font-size: clamp(2rem, 6vw, 3.8rem);
-  font-weight: 300;
+  position: relative;
+  font-family: var(--font);
+  font-size: clamp(1.8rem, 5.2vw, 3.4rem);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
   color: var(--white);
-  line-height: 1.2;
-  text-shadow: 0 2px 12px rgba(0,0,0,0.18);
+  line-height: 1.25;
   text-wrap: balance;
+  text-shadow:
+    0 0 30px rgba(0,0,0,0.9),
+    0 0 60px rgba(0,0,0,0.75),
+    0 2px 6px rgba(0,0,0,0.6);
 }
 
-.hero__badge {
+/* Halo difuminado oscuro detrás del título */
+.hero__title::before {
+  content: "";
   position: absolute;
-  bottom: 1rem;
-  right: 1.2rem;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  color: rgba(255,255,255,0.55);
-  text-transform: uppercase;
-  border: 1px solid rgba(255,255,255,0.3);
-  padding: 0.25rem 0.5rem;
-  border-radius: 3px;
+  inset: -50% -25%;
+  background: radial-gradient(ellipse at center, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 45%, rgba(0,0,0,0) 75%);
+  filter: blur(22px);
+  z-index: -1;
+  pointer-events: none;
 }
 
 /* Description block */
@@ -190,10 +224,12 @@ section {
 }
 
 .intro__text {
-  font-size: clamp(0.95rem, 1.6vw, 1.1rem);
+  font-family: var(--font);
+  font-size: clamp(1rem, 1.7vw, 1.2rem);
   font-weight: 700;
+  letter-spacing: -0.005em;
   color: var(--gold-text);
-  line-height: 1.7;
+  line-height: 1.6;
   margin-bottom: 2rem;
   text-align: justify;
   text-align-last: center;
@@ -226,20 +262,40 @@ section {
 /* Servicios hero banner */
 .servicios-hero {
   position: relative;
-  background: var(--gray-dark);
-  min-height: 190px;
+  background:
+    linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.45)),
+    url("Imagenes/Banner.png") center/cover no-repeat,
+    var(--gray-dark);
+  min-height: 220px;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 .servicios-hero__title {
-  font-size: clamp(2.5rem, 8vw, 5rem);
-  font-weight: 300;
+  position: relative;
+  font-family: var(--font);
+  font-size: clamp(2.2rem, 7vw, 4.4rem);
+  font-weight: 700;
   color: var(--white);
-  letter-spacing: 0.18em;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.15);
+  letter-spacing: 0.25em;
   text-transform: uppercase;
+  text-shadow:
+    0 0 30px rgba(0,0,0,0.85),
+    0 0 60px rgba(0,0,0,0.7),
+    0 2px 6px rgba(0,0,0,0.6);
+}
+
+/* Halo difuminado oscuro detrás del texto SERVICIOS */
+.servicios-hero__title::before {
+  content: "";
+  position: absolute;
+  inset: -40% -25%;
+  background: radial-gradient(ellipse at center, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.4) 45%, rgba(0,0,0,0) 75%);
+  filter: blur(20px);
+  z-index: -1;
+  pointer-events: none;
 }
 
 .servicios-hero__badge {
@@ -258,12 +314,13 @@ section {
 
 /* Category banner */
 .cat-banner {
-  padding: 1rem 2rem;
+  font-family: var(--font);
+  padding: 1.1rem 2rem;
   text-align: center;
-  font-size: clamp(0.85rem, 1.5vw, 1rem);
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  font-size: clamp(1rem, 1.8vw, 1.25rem);
+  font-weight: 700;
+  letter-spacing: -0.005em;
+  text-transform: none;
 }
 
 .cat-banner--orange { background: var(--orange); color: var(--dark); }
@@ -326,14 +383,15 @@ section {
   position: relative;
   z-index: 1;
   width: 100%;
-  padding: 0.7rem 0.9rem;
-  background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 100%);
-  font-size: clamp(0.72rem, 1.2vw, 0.88rem);
-  font-weight: 800;
+  padding: 0.85rem 1rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.15) 70%, transparent 100%);
+  font-family: var(--font);
+  font-size: clamp(0.9rem, 1.4vw, 1.05rem);
+  font-weight: 700;
   color: var(--white);
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+  text-shadow: 0 1px 6px rgba(0,0,0,0.7);
 }
 
 /* Flechas de carrusel */
@@ -395,8 +453,108 @@ section {
   margin: 0 auto;
 }
 
+/* ---- Intro elegante de clientes ---- */
+.clientes-intro {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 2.5rem 0.5rem;
+  text-align: left;
+}
+
+.clientes-intro__kicker {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  color: var(--gold-text);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.clientes-intro__title {
+  font-size: clamp(1.6rem, 3.4vw, 2.6rem);
+  font-weight: 300;
+  color: var(--dark);
+  line-height: 1.15;
+  letter-spacing: -0.005em;
+}
+
+.clientes-intro__title em {
+  font-style: italic;
+  color: var(--gold);
+  font-weight: 400;
+}
+
+@media (max-width: 600px) {
+  .clientes-intro { padding: 2.5rem 1.5rem 0.5rem; }
+}
+
+/* ---- Marquee horizontal infinito de logos de clientes ---- */
+.logos-marquee {
+  position: relative;
+  overflow: hidden;
+  padding: 2.5rem 0;
+  /* Fade en los bordes con máscara */
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 8%, #000 92%, transparent 100%);
+          mask-image: linear-gradient(to right, transparent 0, #000 8%, #000 92%, transparent 100%);
+}
+
+.logos-marquee__track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  /* Sin gap: usamos margin-right en cada item para que -50% sea EXACTO */
+  animation: marquee-scroll 42s linear infinite;
+  will-change: transform;
+}
+
+.logos-marquee:hover .logos-marquee__track {
+  animation-play-state: paused;
+}
+
+.logo-item {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 130px;
+  height: 70px;
+  margin-right: 4.5rem;
+}
+
+.logo-item img {
+  max-height: 100%;
+  max-width: 180px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  opacity: 0.95;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.logo-item img:hover {
+  opacity: 1;
+  transform: scale(1.08);
+}
+
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logos-marquee__track { animation: none; }
+}
+
+@media (max-width: 600px) {
+  .logos-marquee__track { animation-duration: 32s; }
+  .logo-item { min-width: 110px; height: 56px; margin-right: 3rem; }
+  .logo-item img { max-width: 140px; }
+  .clientes-intro { padding: 3rem 1.5rem 1.5rem; }
+}
+
 /* ============================================
-   SECCIÓN 3 — CONTACTO
+   SECCIÓN 4 — CONTACTO
    ============================================ */
 #contacto {
   padding: 4rem 2rem;
@@ -413,9 +571,12 @@ section {
 }
 
 .contacto__intro {
+  font-family: var(--font);
   text-align: center;
-  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
-  line-height: 1.8;
+  font-size: clamp(1rem, 1.7vw, 1.2rem);
+  font-weight: 700;
+  letter-spacing: -0.005em;
+  line-height: 1.65;
   color: var(--dark);
   margin-bottom: 2.5rem;
 }
@@ -458,17 +619,21 @@ section {
 }
 
 .contact-card__label {
-  font-size: 1rem;
-  font-weight: 800;
+  font-family: var(--font);
+  font-size: 1.15rem;
+  font-weight: 700;
   color: var(--gold);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  letter-spacing: -0.005em;
+  text-transform: none;
 }
 
 .contact-card__value {
-  font-size: 0.9rem;
+  font-family: var(--font);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.005em;
   color: var(--dark);
-  line-height: 1.5;
+  line-height: 1.55;
 }
 
 .contact-card__value a {
@@ -584,11 +749,33 @@ footer {
 
   .photo-grid { grid-template-columns: 1fr; padding: 1rem; }
 
-  .hero__title { font-size: 1.8rem; }
+  .hero__title { font-size: 1.6rem; letter-spacing: 0.08em; }
 
   .intro { padding: 2.5rem 1.2rem; }
 
+  /* Reducir tamaño y espaciado del título SERVICIOS en móvil */
+  .servicios-hero { min-height: 170px; padding: 1.5rem 1rem; }
+  .servicios-hero__title {
+    font-size: 1.9rem;
+    letter-spacing: 0.15em;
+    text-align: center;
+    word-break: break-word;
+  }
+
+  /* Cat-banners: padding menor y tamaño reducido */
+  .cat-banner { padding: 0.9rem 1rem; font-size: 0.95rem; line-height: 1.35; }
+
+  /* Mapa más bajo en móvil */
+  .map-wrapper iframe { height: 300px; }
+
   #contacto { padding: 2.5rem 1.2rem; }
+}
+
+/* Pantallas muy pequeñas (≤ 380px) — extra safety */
+@media (max-width: 380px) {
+  .servicios-hero__title { font-size: 1.65rem; letter-spacing: 0.1em; }
+  .hero__title { font-size: 1.4rem; letter-spacing: 0.05em; }
+  .nav__logo { height: 38px; }
 }
 
 /* === prefers-reduced-motion — only intrusive effects === */

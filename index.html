@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" />
 
   <!-- Estilos propios -->
-  <link rel="stylesheet" href="styles.css?v=20260530" />
+  <link rel="stylesheet" href="styles.css?v=20260531l" />
 </head>
 <body>
 
@@ -57,6 +57,10 @@
 
     <!-- Hero -->
     <div class="hero">
+      <video class="hero__video" autoplay muted loop playsinline preload="auto" poster="" aria-hidden="true">
+        <source src="Imagenes/VideoTop.mp4" type="video/mp4" />
+      </video>
+      <div class="hero__overlay" aria-hidden="true"></div>
       <div class="hero__content">
         <h1 class="hero__title">
           Excavaciones y RCD<br />
@@ -64,7 +68,6 @@
           Miajadas
         </h1>
       </div>
-      <span class="hero__badge" title="Próximamente: vídeo corporativo">VÍDEO</span>
     </div>
 
     <!-- Descripción -->
@@ -90,13 +93,12 @@
     <!-- Banner superior con foto -->
     <div class="servicios-hero">
       <h2 class="servicios-hero__title">SERVICIOS</h2>
-      <span class="servicios-hero__badge" title="Próximamente: fotografía">FOTO</span>
     </div>
 
 
     <!-- ---- Sub-sección: RCD ---- -->
     <div class="cat-banner cat-banner--orange" role="heading" aria-level="3">
-      RESIDUOS DE CONSTRUCCIÓN Y DEMOLICIÓN (RCD)
+      Residuos de Construcción y Demolición (RCD)
     </div>
 
     <div class="photo-grid" aria-label="Servicios de gestión de residuos">
@@ -127,7 +129,7 @@
 
     <!-- ---- Sub-sección: Excavaciones y Transporte ---- -->
     <div class="cat-banner cat-banner--orange" role="heading" aria-level="3">
-      EXCAVACIONES Y TRANSPORTE
+      Excavaciones y Transporte
     </div>
 
     <div class="photo-grid" aria-label="Servicios de excavaciones y transporte">
@@ -191,7 +193,33 @@
     <!-- Banner autorización Junta de Extremadura -->
     <div class="auth-banner-wrap">
       <div class="cat-banner cat-banner--green">
-        EMPRESA AUTORIZADA POR LA JUNTA DE EXTREMADURA PARA LA GESTIÓN DE RESIDUOS DE LA CONSTRUCCIÓN Y DEMOLICIÓN
+        Empresa autorizada por la Junta de Extremadura para la gestión de residuos de la construcción y demolición
+      </div>
+    </div>
+
+    <!-- Intro clientes -->
+    <div class="clientes-intro">
+      <span class="clientes-intro__kicker">CLIENTES</span>
+      <h3 class="clientes-intro__title">Han confiado <em>en nosotros.</em></h3>
+    </div>
+
+    <!-- Marquee de logos de clientes -->
+    <div class="logos-marquee" aria-label="Logos de clientes con los que hemos trabajado">
+      <div class="logos-marquee__track">
+        <!-- Set 1 -->
+        <div class="logo-item"><img src="Imagenes/aqualia.png"    alt="Aqualia"     /></div>
+        <div class="logo-item"><img src="Imagenes/conesa.png"     alt="Conesa"      /></div>
+        <div class="logo-item"><img src="Imagenes/nestle.png"     alt="Nestlé"      /></div>
+        <div class="logo-item"><img src="Imagenes/transa.png"     alt="Transa"      /></div>
+        <div class="logo-item"><img src="Imagenes/zonacentro.png" alt="Zona Centro" /></div>
+        <div class="logo-item"><img src="Imagenes/acciona.png"    alt="Acciona"     /></div>
+        <!-- Set 2 (duplicado para loop infinito sin saltos) -->
+        <div class="logo-item" aria-hidden="true"><img src="Imagenes/aqualia.png"    alt="" /></div>
+        <div class="logo-item" aria-hidden="true"><img src="Imagenes/conesa.png"     alt="" /></div>
+        <div class="logo-item" aria-hidden="true"><img src="Imagenes/nestle.png"     alt="" /></div>
+        <div class="logo-item" aria-hidden="true"><img src="Imagenes/transa.png"     alt="" /></div>
+        <div class="logo-item" aria-hidden="true"><img src="Imagenes/zonacentro.png" alt="" /></div>
+        <div class="logo-item" aria-hidden="true"><img src="Imagenes/acciona.png"    alt="" /></div>
       </div>
     </div>
 
@@ -295,7 +323,7 @@
 
 
   <!-- Scripts propios — IIFE, sin módulos ES -->
-  <script defer src="main.js?v=20260530"></script>
+  <script defer src="main.js?v=20260531l"></script>
 
 </body>
 </html>
